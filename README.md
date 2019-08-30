@@ -1,6 +1,10 @@
 # Gyazo-Image-Recovery
 Recovers images on your Gyazo account if you haven't upgraded your account to premium.
 
+## Prerequisites
+```pip install requests```
+```pip install urllib```
+
 ## Notices
 
 This tool is not perfect. The images it gets are compressed, so the quality is not outstanding. Depending on the recovered image's size, text and numbers may be visible and readable.
