@@ -2,7 +2,7 @@
 Recovers images on your Gyazo account if you haven't upgraded your account to premium.
 
 ## Prerequisites
-```pip install requests```
+```pip install requests```,
 ```pip install urllib```
 
 ## Notices
