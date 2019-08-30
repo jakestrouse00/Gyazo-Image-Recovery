@@ -31,6 +31,7 @@ After running *imageFinder.py* you will see a new folder named *Recovered_Images
 
 - [X] Add GIF compatability
 - [ ] Implement *getSession.py* to make the program just one file
+- [ ] Add version that stores images and gifs continuously 
 
 #### Contact Information
 - Discord: Influxes#0603
