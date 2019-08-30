@@ -6,6 +6,27 @@ import time
 from datetime import datetime
 
 
+def getSession(email, password, country):
+    # headers for post request
+    head = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36',
+        'cookie': '__cfduid=de0379a6302e055c35500bc59cc1053681551119262; Gyazo_session=TDR5dkhPQjdsL0hyZ2wwdUtEblNUdlp1aEJ3TGZ0d2FTTTY1bEtFSWVwN2hMTm52ZTZFM3ZxaEFieEdtVEF0T2ZwdURJdnZ6Y3FwSHFtOXY4c3lzN2FxbUdJYzh0QUtGVXprVE1sbUNtY0lYN2F2TkdYQVc5ZCtmcEdMMEJTTGJ4cTRVeUVEYkVldE9UOWJacE5ud1N3MkFKdDhrYlhnRzNMdng3Ty9kaytaR0RVSXVrSDNDQ2ZpbURZcm5neW9tcU1hMFp4TkFtUHFTY1JwQ1BST0JObGwrdExFYlA1RFhwbGdpRW5qbHdOdkQzZ25lVWdQUnpUVVFHaUswcy9wblArTGRoa3loVGVnT0hVS2JmQ0VLUEpyMk14dERVWHZRT0xhNnhaNDNIWWh6SEhhS2dzb2Z3U2NRaldYODNVTnd4b1dxd1ZLd1cwT2xYUm1TSUtSWEJDR1RTVElQRnhhL21lL0RUeGtYNDcwPS0tQ1E3bDgzTWptc0c4ZTF0YktGTVpxdz09--22a81caa60a7db6c6aef771d2cc9d5a098f46d91',
+        'x-csrf-token': 'ibzu7splMNOUj/loImIa2fOuN9/KiYxSyHDyZqTVdUKsC7k0IVkLeYVma98efURrSkuA+ZQBe2DM4CwThs6m4A=='
+    }
+    # json for post request
+    payload = {"email": email, "origin": 'null', "password": password, "country": country}
+    # the post request
+    r = requests.post('https://gyazo.com/api/internal/sessions', headers=head, json=payload)
+    # looking through the response cookies
+    for cookie in r.cookies:
+        try:
+            # spiting the cookie to get the session
+            session = str(cookie).split("<Cookie Gyazo_session=")[1].split(" for .gyazo.com")[0]
+        except:
+            pass
+    return session
+
+
 def getImages(session):
     # getting the current date and time and converting it to epoch
     date_time = str(datetime.now()).split(".")[0]
@@ -51,7 +72,7 @@ def sortImages(imageList):
     # making sure the image description isn't too long
     if len(imageTitle) > 20:
         imageTitle = "Long-file-name"
-    # in case there is a file as a description under 20 characters, replace backslashes with colons 
+    # in case there is a file as a description under 20 characters, replace backslashes with colons
     for char in imageTitle:
         m = '\\'
         if char == m:
@@ -78,9 +99,12 @@ def sortImages(imageList):
 
 
 # File Settings
-Gyazo_Session = ''
+email = ''
+password = ''
+country = ''
 Recovery_Amount = ''
 # Don't change anything below this comment or in the above functions
+Gyazo_Session = getSession(email, password, country)
 session = f"Gyazo_session={Gyazo_Session}"
 images = getImages(session)
 if images is not None:
