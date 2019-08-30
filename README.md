@@ -1,10 +1,8 @@
 # Gyazo-Image-Recovery
 Recovers images on your Gyazo account if you haven't upgraded your account to premium.
-
 ## Prerequisites
 ```pip install requests```, 
 ```pip install urllib```
-
 ## Notices
 
 This tool is not perfect. The images it gets are compressed, so the quality is not outstanding. Depending on the recovered image's size, text and numbers may be visible and readable.
@@ -28,3 +26,13 @@ This tool is not perfect. The images it gets are compressed, so the quality is n
 ### Inteprditing the results
 
 After running *imageFinder.py* you will see a new folder named *Recovered_Images*. Inside of this folder are more folders. Each of these folders is the catagory of the images recovered. When opening any of the catagory folders there will be more folders inside. These folders are named the after the image descriptions. On occasion, you may see a folder named *Long-file-name*. These folders are no diffrent from the other folders, other than the description of the image was a directory. To avoid future errors, I set any descriptions that were longer than 20 charecters to *Long-file-name*.
+
+### Future updates and ideas
+
+- [X] Add GIF compatability
+- [ ] Implement *getSession.py* to make the program just one file
+
+#### Contact Information
+- Discord: Influxes#0603
+- Discord Server: [SERVER](https://discord.gg/J5aBerV "MY DISCORD SERVER")
+- Telegram: @Influxes
