@@ -106,9 +106,13 @@ Recovery_Amount = ''
 # Don't change anything below this comment or in the above functions
 Gyazo_Session = getSession(email, password, country)
 session = f"Gyazo_session={Gyazo_Session}"
+# find images and gifs in your account
 images = getImages(session)
+# make sure there is at least one image or gif
 if images is not None:
+    # loop through the images
     for image in images:
+        # sort the image into it's folders
         sortImages(image)
 
 print("\nImage recovery complete!")
