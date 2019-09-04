@@ -15,6 +15,8 @@ This tool is not perfect. The images it gets are compressed, so the quality is n
 3. Save and close *imageFinder.py*
 4. Run *imageFinder.py* with the command ```python imageFinder.py``` in cmd or terminal
 
+Same steps apply for the [continuous version](.../tree/master/Continuous-GIR)
+
 
 ### Inteprditing the results
 
