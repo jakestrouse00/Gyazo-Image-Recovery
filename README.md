@@ -32,5 +32,4 @@ After running *imageFinder.py* you will see a new folder named *Recovered_Images
 
 #### Contact Information
 - Discord: Influxes#0603
-- Discord Server: [SERVER](https://discord.gg/J5aBerV "MY DISCORD SERVER")
 - Telegram: @Influxes
